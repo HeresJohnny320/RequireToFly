@@ -12,7 +12,7 @@ commands:
     permission-message: You don't have permission for this command
   reqtofly:
     description: Allows User To Fly
-    permission: hj320.fly
+    permission: hj320.fly.req
     permission-message: You don't have permission for this command
   flyparticles:
     description: allows user to toggle fly particles
@@ -29,6 +29,8 @@ hj320.fly.*:
   description: gives all permissions
   default: op
   children:
+    hj320.fly.req:
+      description: Gives access to fly
     hj320.fly:
       description: Gives access to fly
     hj320.flyparticles:

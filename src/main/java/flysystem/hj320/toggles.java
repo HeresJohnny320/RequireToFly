@@ -12,7 +12,7 @@ public class toggles implements CommandExecutor {
     @Override
     public boolean onCommand (CommandSender sender, Command cmd, String label, String[]args){
         if (cmd.getName().equalsIgnoreCase("fly") || cmd.getName().equalsIgnoreCase("reqtofly")) {
-            if (!sender.hasPermission("hj320.fly")) {
+            if (!sender.hasPermission("hj320.fly") || !sender.hasPermission("hj320.fly.req")) {
                 sender.sendMessage("You don't have permission to do this.");
                 return true;
             } else {
