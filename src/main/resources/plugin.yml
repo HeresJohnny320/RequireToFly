@@ -1,0 +1,27 @@
+name: HeresJohnny320-Fly-System
+version: 1.0
+main: flysystem.hj320.HJ320
+api-version: 1.19
+prefix: hj320
+
+
+commands:
+  fly:
+    description: Allows User To Fly
+    permission: hj320.fly
+    permission-message: You don't have permission for this command
+  flyparticles:
+    description: allows user to toggle fly particles
+    permission: hj320.particles
+    permission-message: You don't have permission for this command
+
+
+permissions:
+hj320.fly.*:
+  description: gives all permissions
+  default: op
+  children:
+    hj320.fly:
+      description: Gives access to fly
+    hj320.flyparticles:
+      description: toggle fly particles
