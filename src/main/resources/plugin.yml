@@ -1,4 +1,4 @@
-name: HeresJohnny320-Fly-System
+name: RequireToFly-by-heresjohnny320
 version: 1.0
 main: flysystem.hj320.HJ320
 api-version: 1.19
@@ -10,7 +10,15 @@ commands:
     description: Allows User To Fly
     permission: hj320.fly
     permission-message: You don't have permission for this command
+  reqtofly:
+    description: Allows User To Fly
+    permission: hj320.fly
+    permission-message: You don't have permission for this command
   flyparticles:
+    description: allows user to toggle fly particles
+    permission: hj320.particles
+    permission-message: You don't have permission for this command
+  reqtoflyparticles:
     description: allows user to toggle fly particles
     permission: hj320.particles
     permission-message: You don't have permission for this command

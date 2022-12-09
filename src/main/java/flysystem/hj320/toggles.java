@@ -11,7 +11,7 @@ import java.util.UUID;
 public class toggles implements CommandExecutor {
     @Override
     public boolean onCommand (CommandSender sender, Command cmd, String label, String[]args){
-        if (cmd.getName().equalsIgnoreCase("fly")) {
+        if (cmd.getName().equalsIgnoreCase("fly") || cmd.getName().equalsIgnoreCase("reqtofly")) {
             if (!sender.hasPermission("hj320.fly")) {
                 sender.sendMessage("You don't have permission to do this.");
                 return true;
@@ -34,7 +34,7 @@ public class toggles implements CommandExecutor {
                 }
             }
         }
-        if (cmd.getName().equalsIgnoreCase("flyparticles")) {
+        if (cmd.getName().equalsIgnoreCase("flyparticles")||cmd.getName().equalsIgnoreCase("reqtoflyparticles")) {
             if (!sender.hasPermission("hj320.particles")) {
                 sender.sendMessage("You don't have permission to do this.");
                 return true;
