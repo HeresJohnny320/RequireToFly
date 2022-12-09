@@ -26,8 +26,10 @@ public class fly_system implements Listener {
                 if(player.isOnline() == true){
                         String mode = player.getGameMode().toString();
                         if (mode == "CREATIVE" || mode == "SPECTATOR") {player.setAllowFlight(true);} else {
-                            if(isplayerinflyon(player) == true && player.hasPermission("hj320.fly")){
-                                    if (Integer.parseInt(getplayershours(player))  <= Integer.parseInt(geconfigram())) {player.setAllowFlight(false);} else {
+                            if(isplayerinflyon(player) == true && player.hasPermission("hj320.fly")||isplayerinflyon(player) == true && player.hasPermission("hj320.fly.req")){
+                                if(getplayershours(player) == null)return;
+                                if(geconfigram() == null)return;
+                                if (Integer.parseInt(getplayershours(player))  <= Integer.parseInt(geconfigram())) {player.setAllowFlight(false);} else {
                                         if (Integer.parseInt(getplayershours(player)) >= Integer.parseInt(geconfigram())) {player.setAllowFlight(true);}
                                         if (player.isFlying()|| player.isGliding()) {
                                         if(isplayerinparton(player) == true && player.hasPermission("hj320.particles")){
@@ -48,7 +50,7 @@ public class fly_system implements Listener {
                 for (Player player : Bukkit.getServer().getOnlinePlayers()) {
                     if(player.isOnline() == true){
                         int up5 = Integer.parseInt(storeplayerhours.get(player.getUniqueId()))+5;
-                        
+
 //                        System.out.println("player = "+player.getName());
 //                        System.out.println("up5 set to "+up5);
 //                        System.out.println("is player fly on = "+isplayerinflyon(player));
@@ -77,11 +79,11 @@ public class fly_system implements Listener {
         return false;
     }
     public static String geconfigram() {
-        if(getconfigloadinram.get("hj320hourconfig") == null)return null;
+        if(getconfigloadinram.get("hj320hourconfig") == null)return "0";
         return getconfigloadinram.get("hj320hourconfig");
     }
     public static String getplayershours(Player p) {
-        if(storeplayerhours.get(p.getUniqueId()) == null)return null;
+        if(storeplayerhours.get(p.getUniqueId()) == null)return "0";
         return storeplayerhours.get(p.getUniqueId());
     }
 }
