@@ -9,12 +9,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class HJ320 extends JavaPlugin {
     public static HJ320 getInstance() {return plugin; }
     private static HJ320 plugin;
-    //TODO
-    // toggle fly+
-    // toggle particles+
-    // 50 hours to unlock fly -+
-    // when user joins server cache shit and log +
-    // so when player join for sec or more time see if fly or part is on +
     @Override
     public void onEnable() {
         plugin = this;
