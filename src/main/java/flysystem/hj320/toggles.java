@@ -35,7 +35,7 @@ public class toggles implements CommandExecutor {
             }
         }
         if (cmd.getName().equalsIgnoreCase("flyparticles")||cmd.getName().equalsIgnoreCase("reqtoflyparticles")) {
-            if (!sender.hasPermission("hj320.particles")) {
+            if (!sender.hasPermission("hj320.particles")||!sender.hasPermission("hj320.reqtoflyparticles")) {
                 sender.sendMessage("You don't have permission to do this.");
                 return true;
             } else {
@@ -52,6 +52,19 @@ public class toggles implements CommandExecutor {
                         fly_system.isparticlesshitoncache.put(uuid, "1");
                     }
                 }
+            }
+        }
+        if (cmd.getName().equalsIgnoreCase("playtime") || cmd.getName().equalsIgnoreCase("reqtoflyplaytime")) {
+            if (!sender.hasPermission("hj320.playtime") || !sender.hasPermission("hj320.reqtoflyplaytime")) {
+                sender.sendMessage("You don't have permission to do this.");
+                return true;
+            } else {
+                String mins = fly_system.getplayersmins(Bukkit.getPlayer(sender.getName()));
+                String playtimeshow = fly_system.convert_time(Integer.parseInt(mins));
+                sender.sendMessage(playtimeshow);
+//                System.out.println("mins: " + mins);
+//                System.out.println("config time set: " + fly_system.geconfigram());
+//                System.out.printf(playtimeshow);
             }
         }
         return false;

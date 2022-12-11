@@ -30,7 +30,7 @@ public final class HJ320 extends JavaPlugin {
         Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.RED + "-----------------------------------");
         Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.AQUA + "[Plugin:"+plugin.getName()+" Un Loaded]");
         Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.RED + "-----------------------------------");
-        fly_system.storeplayerhours.clear();
+        fly_system.storeplayermins.clear();
         fly_system.isflyshitoncache.clear();
         fly_system.isparticlesshitoncache.clear();
         fly_system.getconfigloadinram.clear();

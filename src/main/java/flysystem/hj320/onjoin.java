@@ -16,18 +16,19 @@ public class onjoin implements Listener {
         Player player = event.getPlayer();
 
         if(get_user_data_exists(player.getUniqueId()) == false){
-            cache.save_user_data(player.getUniqueId(), "user_first_join_time", 0+"");
+            cache.save_user_data(player.getUniqueId(), "mins_user_has_played", 0+"");
+            cache.save_user_data(player.getUniqueId(), "user_first_join_time", System.currentTimeMillis()+"");
             cache.save_user_data(player.getUniqueId(), "fly_enabled","1");
             cache.save_user_data(player.getUniqueId(), "particles_enabled","1");
         }
         fly_system.isparticlesshitoncache.put(player.getUniqueId(), cache.get_user_data(player.getUniqueId(), cache.get_user_data(player.getUniqueId(), "particles_enabled")));
         fly_system.isflyshitoncache.put(player.getUniqueId(), cache.get_user_data(player.getUniqueId(),  cache.get_user_data(player.getUniqueId(), "fly_enabled")));
-        fly_system.storeplayerhours.put(player.getUniqueId(), cache.get_user_data(player.getUniqueId(), "user_first_join_time"));
+        fly_system.storeplayermins.put(player.getUniqueId(), cache.get_user_data(player.getUniqueId(), "mins_user_has_played"));
     }
     @EventHandler
     private void onPlayerQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        fly_system.storeplayerhours.remove(player.getUniqueId());
+        fly_system.storeplayermins.remove(player.getUniqueId());
         fly_system.isflyshitoncache.remove(player.getUniqueId());
         fly_system.isparticlesshitoncache.remove(player.getUniqueId());
     }

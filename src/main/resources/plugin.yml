@@ -20,7 +20,15 @@ commands:
     permission-message: You don't have permission for this command
   reqtoflyparticles:
     description: allows user to toggle fly particles
-    permission: hj320.particles
+    permission: hj320.reqtoflyparticles
+    permission-message: You don't have permission for this command
+  playtime:
+    description: tells user playtime
+    permission: hj320.playtime
+    permission-message: You don't have permission for this command
+  reqtoflyplaytime:
+    description: tells user playtime
+    permission: hj320.reqtoflyplaytime
     permission-message: You don't have permission for this command
 
 
@@ -35,3 +43,9 @@ hj320.fly.*:
       description: Gives access to fly
     hj320.flyparticles:
       description: toggle fly particles
+    hj320.reqtoflyparticles:
+      description: toggle fly particles
+    hj320.playtime:
+      description: tells users playtime
+    hj320.reqtoflyplaytime:
+      description: tells users playtime
